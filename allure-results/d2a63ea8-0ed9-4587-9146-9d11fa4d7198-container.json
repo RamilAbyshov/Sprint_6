@@ -1,0 +1,1 @@
+{"uuid": "54aba34b-8b13-44d9-b1c9-e9f0b5150de9", "children": ["83370fff-b07a-4781-8e46-5c228ea656a6"], "befores": [{"name": "main_page", "status": "passed", "steps": [{"name": "Открыть страницу qa-scooter", "status": "passed", "start": 1754149816723, "stop": 1754149817786}], "start": 1754149816723, "stop": 1754149817786}], "start": 1754149816723, "stop": 1754149817908}
