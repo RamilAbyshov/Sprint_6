@@ -98,3 +98,35 @@ class BasePage:
         )
         return self
 
+    @allure.step("Дождаться отображения элемента по локатору")
+    def wait_for_all_elements_visible(self, locator, timeout=10):
+        return  WebDriverWait(self.driver, 10).until(
+            EC.presence_of_all_elements_located(locator)
+        )
+
+    @allure.step("Дождаться кликабельности элемента по локатору")
+    def wait_for_element_clickable(self, element_or_locator, timeout=5):
+        return WebDriverWait(self.driver, timeout).until(
+            EC.element_to_be_clickable(element_or_locator)
+        )
+
+    @allure.step("Открыть URL: {url}")
+    def open_url(self, url):
+        self.driver.get(url)
+        return self
+
+    @allure.step("Получить текущий URL")
+    def get_current_url(self):
+        return self.driver.current_url
+
+    @allure.step("Получить текущее окно")
+    def get_current_window(self):
+        return self.driver.current_window_handle
+
+    @allure.step("Закрыть текущее окно")
+    def close_current_window(self):
+        self.driver.close()
+
+    @allure.step("Переключиться на окно: {window_handle}")
+    def switch_to_window(self, window_handle):
+        self.driver.switch_to.window(window_handle)

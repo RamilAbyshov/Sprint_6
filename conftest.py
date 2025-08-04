@@ -9,7 +9,6 @@ from selenium.webdriver.firefox.options import Options
 def driver():
 
     firefox_options = Options()
-    firefox_options.add_argument("--headless")
     driver = webdriver.Firefox(options=firefox_options)
 
     if Config.MAXIMIZE:

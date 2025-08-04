@@ -1,7 +1,6 @@
 class TestData:
 
     class LogoRedirectData:
-        SCOOTER_EXPECTED_URL = "qa-scooter.praktikum-services.ru"
         YANDEX_EXPECTED_URL = "dzen.ru"
 
     class FaqData:
