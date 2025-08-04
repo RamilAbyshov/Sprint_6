@@ -43,7 +43,7 @@ class OrderPage(BasePage):
     def _select_metro_station(self, station_name):
         self.click(OrderPageLocators.METRO_INPUT)
         self.send_keys(OrderPageLocators.METRO_INPUT, station_name)
-        self.driver.find_element(*OrderPageLocators.METRO_INPUT).send_keys(Keys.DOWN, Keys.RETURN)
+        self.send_raw_keys(OrderPageLocators.METRO_INPUT, Keys.DOWN, Keys.RETURN)
 
     @allure.step("Выбрать дату доставки")
     def _select_delivery_date(self, date_option):

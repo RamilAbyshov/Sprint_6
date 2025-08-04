@@ -30,14 +30,6 @@ class MainPage(BasePage):
     @allure.step('Начать заказ с нижней кнопки "Заказать"')
     def start_order_from_bottom_button(self):
         element = self.wait_for_element(MainPageLocators.BOTTOM_ORDER_BUTTON)
-        self.driver.execute_script("arguments[0].scrollIntoView();", element)
+        self.scroll_to_element(element)
         self.click(MainPageLocators.BOTTOM_ORDER_BUTTON)
-
-    @allure.step('Проскроллить к разделу FAQ')
-    def scroll_to_faq_section(self):
-        from pages.faq_page import FaqPage
-        faq_page = FaqPage(self.driver)
-        faq_section = self.wait_for_element(faq_page.locators.FAQ_SECTION)
-        self.scroll_to_element(faq_section)
-        return faq_page
 

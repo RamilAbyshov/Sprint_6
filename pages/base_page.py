@@ -26,6 +26,14 @@ class BasePage:
         element.send_keys(text)
         return self
 
+    @allure.step("Отправить клавиши {keys} в элемент {locator}")
+    def send_raw_keys(self, locator, *keys, timeout=10):
+        element = WebDriverWait(self.driver, timeout).until(
+            EC.visibility_of_element_located(locator)
+        )
+        element.send_keys(*keys)
+        return self
+
     @allure.step("Проверить видимость элемента {locator}")
     def is_element_visible(self, locator, timeout=10):
         try:
